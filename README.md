@@ -1,69 +1,83 @@
-# Hello app
+# tryfle A look at flet for building cross platform apps
 
-## Run the app
+## Flet on macos (tahoe)
 
-### uv
+Installing and trying flet on macos was relatively painless.
 
-Run as a desktop app:
-
-```bash
-uv run flet run
+### flet run on macos
+``` sh
+git clone git@github.com:feurig/tryfle.git
+cd tryfle
+flet create --project-name=hello
+flet run
 ```
 
-Run as a web app:
+![fletrunning](docs/images/flet-run.jpg)
 
-```bash
-uv run flet run --web
-```
+Which is pretty damned cool!
 
-For more details on running the app, refer to the [Getting Started Guide](https://flet.dev/docs/).
+### flet build for macos
 
-## Build the app
+We are supposed to be able to build binaries so....
 
-### Android
-
-```bash
-flet build apk -v
-```
-
-For more details on building and signing `.apk` or `.aab`, refer to the [Android Packaging Guide](https://flet.dev/docs/publish/android/).
-
-### iOS
-
-```bash
-flet build ipa -v
-```
-
-For more details on building and signing `.ipa`, refer to the [iOS Packaging Guide](https://flet.dev/docs/publish/ios/).
-
-### macOS
-
-```bash
+```sh
 flet build macos -v
 ```
+#### fails
 
-For more details on building macOS package, refer to the [macOS Packaging Guide](https://flet.dev/docs/publish/macos/).
+flet build uses a pile of google provided ruby named flutter. One of its dependencies is cocoapods. Which doesn't play well with the arcane version of ruby that is still the default on macos tahoe.
 
-### Linux
+And installing ruby 3 or 4 on macos is just a pile.
 
-```bash
-flet build linux -v
+```sh
+sudo gem install cocoapods
+gem install ffi -v 1.17.4
+sudo gem install ffi -v 1.17.4
+# FAILS !!!!
+brew install ruby
+brew install ruby3
+brew install ruby@3.4
+type ruby
+which ruby
+ruby --version
+brew install ruby
+brew install ruby@3.4
+echo "eval $(/opt/homebrew/bin/brew shellenv)" >> ~/.zprofile
+eval $(/usr/local/bin/brew shellenv)
+# FAILS !!!! then some googles....
+brew install rbenv
+/usr/local/bin/rbenv install --list-all
+brew show ruby
+brew info ruby
+/usr/local/bin/rbenv install 4.0.0
+# FAILS !!!!
+/usr/local/bin/rbenv install 3.3.11
+# FAILS !!!!
+brew install openssl
+brew reinstall openssl
+/usr/local/bin/rbenv install 4.0.0
+# FAILS !!!!
+brew reinstall libopenssl
+brew info ruby
+/usr/local/bin/rbenv install 4.0.3
+# FAILS !!!! ...more googles...
+brew install openssl@1.1
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"\nrbenv install 3.0.6
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"\n\nrbenv install 3.3.3
+# FAILS !!!!
 ```
 
-For more details on building Linux package, refer to the [Linux Packaging Guide](https://flet.dev/docs/publish/linux/).
+#### DOH! homebrew has a cocoapods
 
-### Windows
-
-```bash
-flet build windows -v
+```sh
+brew install cocoapods
+brew link --overwrite cocoapods
 ```
 
-For more details on building Windows package, refer to the [Windows Packaging Guide](https://flet.dev/docs/publish/windows/).
+#### Neeto!!!
 
-### Web
+![hello app](docs/images/hello-app.jpg)
 
-```bash
-flet build web -v
-```
+## References
 
-For more details on building Web app, refer to the [Web Packaging Guide](https://flet.dev/docs/publish/web/).
+https://dev.to/flet/tutorial-build-and-package-a-multi-platform-desktop-app-in-python-3ncc
