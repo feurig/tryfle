@@ -23,6 +23,7 @@ We are supposed to be able to build binaries so....
 ```sh
 flet build macos -v
 ```
+
 #### fails
 
 flet build uses a pile of google provided ruby named flutter. One of its dependencies is cocoapods. Which doesn't play well with the arcane version of ruby that is still the default on macos tahoe.
@@ -77,6 +78,42 @@ brew link --overwrite cocoapods
 #### Neeto!!!
 
 ![hello app](docs/images/hello-app.jpg)
+
+#### Pushing the mac a little further.
+
+So for fun I found a CC hello world icon ![icon](src/assets/icon.png) 
+
+and replaced the flet one.
+The [license with the attribution](src/assets/LICENSE.md) is
+is in the repo with under src/assets.
+
+```sh
+feurig@pj tryfle % flet build macos -v
+[19:39:58] Run subprocess: ['/Users/feurig/flutter/3.41.4/bin/flutter', '--version',
+...
+╭────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ Successfully built your macOS bundle! 🥳 Find it in build/macos directory. 📁                  │
+╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+feurig@pj tryfle % rm -rf ~/Applications/hello.app
+feurig@pj tryfle % mv build/macos/hello.app ~/Applications
+```
+
+The flet icon still shows up still shows up in the task bar.
+But it looks and feels more like a mac app.
+
+![new icon](docs/images/hello-app2.jpg)
+
+### cross compiling on the mac (FAIL)
+
+YOU ARE HERE.
+
+### cross compiling on debian (FAIL)
+
+AND HERE
+
+### cross compiling on rasberian (partial FAIL)
+
+AND HERE
 
 ## References
 
