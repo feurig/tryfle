@@ -28,7 +28,7 @@ We are supposed to be able to build binaries so....
 flet build macos -v
 ```
 
-#### fails
+#### FAILS
 
 flet build uses a pile of google provided ruby named flutter. One of its dependencies is cocoapods. Which doesn't play well with the arcane version of ruby that is still the default on macos tahoe.
 
@@ -109,7 +109,7 @@ But it looks and feels more like a mac app.
 
 ### cross compiling on the mac (FAIL)
 
-I have a few raspberry pi's which have displays and which I plan to embed in various things throwing up a nice display quickly is very appealing. So my first thought was to cross compile from the mac to linux. (I knew this was a long shot)
+I have a few raspberry pi's which have displays and which I plan to embed in various things. Throwing up a nice display quickly is very appealing. So my first thought was to cross compile from the mac to linux. (I knew this was a long shot).
 
 ```sh
 feurig@pj tryfle % flet build linux --arch=aarch64
