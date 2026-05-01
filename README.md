@@ -140,7 +140,7 @@ feurig@pj tryfle % flet build linux --arch=aarch64
 
 ### cross compiling on debian (FAIL)
 
-Ok so I really don't want to build on an underpowered little device when I have a relatively beefy linux box in the basement. 
+Ok so I really don't want to build on an underpowered little device when I have a relatively beefy linux box in the basement. I will spare you the details of installing the toolchain and insane prereqs.
 
 ```sh
 feurig@nick:~/Projects/tryfle$ PATH=$PATH:/tank/home/feurig/flutter/3.41.4/bin flet build linux --arch=aarch64
