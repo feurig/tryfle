@@ -4,15 +4,22 @@ My team lead got all exited about this thing called flet for whipping out python
 
 Most of the stuff that follows is based on the default app that you get when you install flet and 'flet create' an app. it is a box with a number and a button that increments it.
 
+```
+# after creating an empty repository
+git clone git@github.com:feurig/tryfle.git
+cd tryfle
+flet create --project-name=hello
+```
+
 ## Flet on macos (tahoe)
 
 Installing and trying flet on macos was relatively painless.
 
 ### flet run on macos
+
 ``` sh
 git clone git@github.com:feurig/tryfle.git
 cd tryfle
-flet create --project-name=hello
 flet run
 ```
 
@@ -155,7 +162,9 @@ feurig@nick:~/Projects/tryfle$ PATH=$PATH:/tank/home/feurig/flutter/3.41.4/bin f
            ERROR: Target dart_build failed: Error: Failed to find any of  in
            LocalDirectory: '/usr/lib/llvm-19/bin'
            Build process failed
-... more blah blah ... ╭───────────────────────────────────────────────────────────────────────────────────────╮
+... more blah blah ... 
+
+╭───────────────────────────────────────────────────────────────────────────────────────╮
 │ Error building Flet app - see the log of failed command above.                        │
 ╰───────────────────────────────────────────────────────────────────────────────────────╯
 feurig@nick:~/Projects/tryfle$ ls -lsa /usr/lib/llvm-19/
@@ -217,7 +226,7 @@ Pushing the install button puts the app in a really nice window where none of th
 
 ### Running on raspberry pi
 
-Since running on the raspberri pi is good enough for our use case we will start there.
+Since running on the raspberri pi is good enough for our use case we will go there first.
 
 ![long narrow](docs/images/raspirun.jpg)
 
@@ -225,7 +234,9 @@ That works!
 
 ### compiling on rasberry pi (FAIL)
 
-In a rasberry pi 5 flet install an intel binary. That is gobsmacking stupid.
+On a rasberry pi, which is an arm processor, flet installed an intel binary. 
+
+That is gobsmackingly stupid.
 
 ```sh
 feurig@five:~/Projects/tryfle $ flet build linux --arch=aarch64
@@ -253,7 +264,21 @@ feurig@five:~/Projects/tryfle $ file /home/feurig/flutter/3.41.4/bin/cache/dart-
 /home/feurig/flutter/3.41.4/bin/cache/dart-sdk/bin/dart: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=a6c2875adfaa96a24e720daaf5261c03f2e7d05f, stripped
 feurig@five:~/Projects/tryfle $
 ```
-So. Mixed bag so far.
+
+### Windows
+I don't do windows _(unless someone is paying me enough to)_
+
+On the other hand if Windows works as well as the mac I would happily excuse the linux fails since it still works well enough to be useful and there is a lot of windows out there.
+
+If you are a windows dev feel free to pull this repo down and send me an mr or comments with how it went.
+
+## Initial conclusion
+
+It's a mixed bag so far. 
+
+It has its uses. Probably the best of which was the one that my team lead was happy about (html display of columnar data at a glance without having to convert it to a spreadheet). I did go down the rabbit hole of trying to figure out some of the FAILS, but the googles are getting more and more worthless and there is only so much time.
+
+For now, I think it's got a small place in my toolbox. 
 
 ## References
 
