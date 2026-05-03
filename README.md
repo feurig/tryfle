@@ -15,8 +15,6 @@ Then I did something similar to the following
 git clone git@github.com:feurig/tryfle.git
 cd tryfle
 flet create --project-name=hello
-git add *
-git status
 git add pyproject.toml src
 git status
 git commit -a -m "This is our starting point"
