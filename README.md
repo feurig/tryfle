@@ -1,21 +1,33 @@
 # tryfle A look at flet for building cross platform apps
 
+"DISCLAIMER: This repository contains the test app for a framework called flet and this readme. The readme is also me just trying to see whether or not its worth working with and jotting enough down to come back to it if it is. It is by no means meant to be complete or coherent, just a test case and a running set of notes."
+
 My team lead got all exited about this thing called flet for whipping out python data at a glance (using it as a web app) I had never heard of it but I have spent years developing multiplatform gui applications using wxpython so I thought I would give it a try.
 
 Most of the stuff that follows is based on the default app that you get when you install flet and 'flet create' an app. it is a box with a number and a button that increments it.
 
-```
-# after creating an empty repository
+## The setup
+
+I created this repository as an empty repository. 
+Then I did something similar to the following
+
+```sh
 git clone git@github.com:feurig/tryfle.git
 cd tryfle
 flet create --project-name=hello
+git add *
+git status
+git add pyproject.toml src
+git status
+git commit -a -m "This is our starting point"
+git push
 ```
 
 ## Flet on macos (tahoe)
 
 Installing and trying flet on macos was relatively painless.
 
-### flet run on macos
+### trying flet run on macos
 
 ``` sh
 git clone git@github.com:feurig/tryfle.git
