@@ -280,13 +280,15 @@ I don't do windows _(unless someone is paying me enough to)_
 
 On the other hand if Windows works as well as the mac I would happily excuse the linux fails since it still works well enough to be useful and there is a lot of windows out there.
 
-If you are a windows dev feel free to pull this repo down and send me an mr or comments with how it went.
+My friend tested this on a windows system with the full visual studio suite installed. It ran using flet run but, like the native linux build, could not find the installed tools. 
+
+https://gist.github.com/tlockney/a677247beeedccc293f321a71528f113
 
 ## Initial conclusion
 
-It's a mixed bag so far. 
+It's a mixed bag so far. Meh.
 
-It has its uses. Probably the best of which was the one that my team lead was happy about (html display of columnar data at a glance without having to convert it to a spreadheet). I did go down the rabbit hole of trying to figure out some of the FAILS, but the googles are getting more and more worthless and there is only so much time.
+It has its uses. Probably the best of which was the one that my team lead was happy about (html display of columnar data at a glance without having to convert it to a spreadheet). I did go down the rabbit hole of trying to figure out some of the FAILS, but much like it's ability to build and package code, the googles are getting more and more cluttered with slop and there is only so much time.
 
 For now, I think it's got a small place in my toolbox. 
 
